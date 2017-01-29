@@ -7,7 +7,8 @@ package jp.ac.uryukyu.ie.e165750;
 public class Main {
     public static void main(String[] args) {
         Destroy destroy = new Destroy();
-        destroy.suikaposition();
+        Destroy e;
+        destroy.suikaposition(destroy);
 
     }
 }
