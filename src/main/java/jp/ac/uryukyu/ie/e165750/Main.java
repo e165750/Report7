@@ -1,4 +1,5 @@
 package jp.ac.uryukyu.ie.e165750;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by e165750 on 2017/01/28.
@@ -8,7 +9,11 @@ public class Main {
     public static void main(String[] args) {
         Destroy destroy = new Destroy();
         Destroy e;
-        destroy.suikaposition(destroy);
+        destroy.suikaposition(destroy);//これでスイカの位置とプレイヤーの初期値を配置
+        destroy.getHint();
+
+
+
 
     }
 }
