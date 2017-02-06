@@ -1,7 +1,6 @@
 package jp.ac.uryukyu.ie.e165750;
 
 import java.io.IOException;
-
 /**
  * Created by e165750 on 2017/01/28.
  */
@@ -23,11 +22,13 @@ public class Main {
         destroy.f = (int) (Math.random() * 9);
         destroy.p  =(int) (Math.random() * 9);
 
-        destroy.suikaposition(destroy);//これでスイカの位置とプレイヤーの初期値を配置
-
-          if (destroy.f == destroy.x && destroy.p == destroy.y) {//初期値がスイカの場所と被らないようにするためのif文
+        if (destroy.f == destroy.x && destroy.p == destroy.y) {//初期値がスイカの場所と被らないようにするためのif文
             destroy.syokiti();
         }
+
+        destroy.suikaposition(destroy);//これでスイカの位置とプレイヤーの初期値を配置
+
+
 
         destroy.remainder();
 
@@ -40,6 +41,7 @@ public class Main {
         destroy.remainder();
 
         destroy.¥presssed();//¥キーでスイカはここだ、と決めた時のアクションメソッド
+
     }
 }
 

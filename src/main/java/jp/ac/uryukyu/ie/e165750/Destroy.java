@@ -1,9 +1,10 @@
 package jp.ac.uryukyu.ie.e165750;
 import java.io.*;
+import javax.swing.JFrame;
 /**
  * Created by e165750 on 2017/01/28.
  */
-public class Destroy {
+public class Destroy extends JFrame{
     InputStreamReader is = new InputStreamReader(System.in);
     int x, y;//スイカの位置をxy座標で表す
     int f, p;//プレイヤーの初期値を表す
@@ -61,19 +62,19 @@ public class Destroy {
         }
         if (y > p) {
             if (tatesa < 2) {
-                System.out.println("もう少し下!!");
-            } else if (tatesa < 5) {
-                System.out.println("まぁまぁ下!!");
-            } else if (tatesa >= 5) {
-                System.out.println("ずっと下!!");
-            }
-        } else {
-            if (tatesa < 2) {
                 System.out.println("もう少し上!!");
             } else if (tatesa < 5) {
                 System.out.println("まぁまぁ上!!");
             } else if (tatesa >= 5) {
                 System.out.println("ずっと上!!");
+            }
+        } else {
+            if (tatesa < 2) {
+                System.out.println("もう少し下!!");
+            } else if (tatesa < 5) {
+                System.out.println("まぁまぁ下!!");
+            } else if (tatesa >= 5) {
+                System.out.println("ずっと下!!");
             }
         }
         return 0;
@@ -122,11 +123,12 @@ public class Destroy {
                     System.out.println("これ以上進めないよ!");
                 }
             }
-            else if(charCode == 165) {
-                break;
-            }
+
             else if (charCode == 10){
                 System.out.println("ザッ");
+            }
+            else if(charCode == 165) {
+                break;
             }
             else {
                 System.out.println("ミスタイプだよ");
@@ -136,18 +138,22 @@ public class Destroy {
         }
     }
 
-
     public void ¥presssed() {
         if (tatesa + yokosa == 0) {
             System.out.println("おめでとう！スイカは割れたよ！");
+
         }else if (tatesa + yokosa < 2) {
             System.out.println("惜しい!!");
+
         } else if (tatesa + yokosa < 5) {
             System.out.println("もう少し!!");
+
         } else if(tatesa + yokosa < 10){
             System.out.println("まだまだ遠い..");
+
         } else if (tatesa + yokosa > 10) {
             System.out.println("全然遠い!!");
+
         }
     }
 }
