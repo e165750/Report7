@@ -4,7 +4,7 @@ import java.io.*;
  * Created by e165750 on 2017/01/28.
  */
 public class Destroy {
-
+    InputStreamReader is = new InputStreamReader(System.in);
     int x, y;//スイカの位置をxy座標で表す
     int f, p;//プレイヤーの初期値を表す
 
@@ -32,48 +32,53 @@ public class Destroy {
     int width;
     int yokosa;
 
+    public void remainder(){
+        length = p - y;//・・・(1)
+        tatesa = Math.abs(length);//(1)とこのコードでスイカと初期値の縦の距離を測る
+        width = f - x;//・・・(2)
+        yokosa = Math.abs(width);//(2)とこのコードでスイカと初期値の横の距離を測る
+
+    }
+
     public int getHint() {//スイカと初期値の距離によってヒントを与えるメソッド
         if (x > f) {
             if (yokosa < 2) {
-                System.out.println("もう少し上!!");
+                System.out.println("もう少し右!!");
             } else if (yokosa < 5) {
-                System.out.println("まぁまぁ上!!");
+                System.out.println("まぁまぁ右!!");
             } else if (yokosa >= 5) {
-                System.out.println("ずっと上!!");
+                System.out.println("ずっと右!!");
             }
         } else {
             if (yokosa < 2) {
-                System.out.println("もう少し下!!");
+                System.out.println("もう少し左!!");
             } else if (yokosa < 5) {
-                System.out.println("まぁまぁ下!!");
+                System.out.println("まぁまぁ左!!");
             } else if (yokosa >= 5) {
-                System.out.println("ずっと下!!");
+                System.out.println("ずっと左!!");
             }
 
         }
         if (y > p) {
             if (tatesa < 2) {
-                System.out.println("もう少し左!!");
+                System.out.println("もう少し下!!");
             } else if (tatesa < 5) {
-                System.out.println("まぁまぁ左!!");
+                System.out.println("まぁまぁ下!!");
             } else if (tatesa >= 5) {
-                System.out.println("ずっと左!!");
+                System.out.println("ずっと下!!");
             }
         } else {
             if (tatesa < 2) {
-                System.out.println("もう少し右!!");
+                System.out.println("もう少し上!!");
             } else if (tatesa < 5) {
-                System.out.println("まぁまぁ右!!");
+                System.out.println("まぁまぁ上!!");
             } else if (tatesa >= 5) {
-                System.out.println("ずっと右!!");
+                System.out.println("ずっと上!!");
             }
         }
-
         return 0;
-
     }
 
-         InputStreamReader is = new InputStreamReader(System.in);
     int charCode = is.read();
 
      /*
@@ -129,12 +134,13 @@ public class Destroy {
 
             charCode = is.read();
         }
-
     }
 
 
-    public void ¥presssed(){
-        if (tatesa + yokosa < 2) {
+    public void ¥presssed() {
+        if (tatesa + yokosa == 0) {
+            System.out.println("おめでとう！スイカは割れたよ！");
+        }else if (tatesa + yokosa < 2) {
             System.out.println("惜しい!!");
         } else if (tatesa + yokosa < 5) {
             System.out.println("もう少し!!");
@@ -144,7 +150,5 @@ public class Destroy {
             System.out.println("全然遠い!!");
         }
     }
-
-
 }
 

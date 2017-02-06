@@ -8,7 +8,12 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println("エンターを押してね");
+        System.out.println("スイカ割りをしよう!!\n");
+        System.out.println(" ルール説明：\n\n 1.一度だけヒントが出されるのでそのヒントを元にx:上、z:下、a:右、s:左のキーを使って" +
+                "スイカを探そう!\n\n 注)この時、キーを一回押すごとにエンターを押してね\n\n 2.そしてここだと思ったところで¥キーを押そう!");
+
+
+        System.out.println(" \nエンターでスタート！");
 
         Destroy destroy = new Destroy();
 
@@ -24,16 +29,15 @@ public class Main {
             destroy.syokiti();
         }
 
-        destroy.length = destroy.f - destroy.x;//・・・(1)
-        destroy.tatesa = Math.abs(destroy.length);//(1)とこのコードでスイカと初期値の縦の距離を測る
-        destroy.width = destroy.p - destroy.y;//・・・(2)
-        destroy.yokosa = Math.abs(destroy.width);//(2)とこのコードでスイカと初期値の横の距離を測る
+        destroy.remainder();
 
         System.out.println("スイカの位置は...");
 
         destroy.getHint();//スイカと初期値の距離によってヒントを与えるメソッド
 
         destroy.serchsuika();//スイカを探すメソッド
+
+        destroy.remainder();
 
         destroy.¥presssed();//¥キーでスイカはここだ、と決めた時のアクションメソッド
     }
